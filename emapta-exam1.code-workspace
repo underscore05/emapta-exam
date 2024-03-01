@@ -1,0 +1,58 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/bower_components": true,
+      "**/*.code-search": true,
+      "**/dist": true,
+      "**/build": true,
+      "**/coverage": true,
+      ".yarn/**": true
+    },
+    "jest.autoRun": "off",
+    "jest.testExplorer": {
+      "enabled": true
+    },
+    "jest.showCoverageOnLoad": true,
+    "eslint.codeActionsOnSave.mode": "all",
+    "eslint.run": "onType",
+    "editor.tabSize": 4,
+    "eslint.enable": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "never",
+      "source.organizeImports": "never"
+    },
+    "eslint.format.enable": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "javascript.preferences.importModuleSpecifier": "relative",
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "jest.jestCommandLine": "yarn test",
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "arcanis.vscode-zipfs",
+      "dbaeumer.vscode-eslint",
+      "bierner.markdown-emoji",
+      "eamodio.gitlens",
+      "orta.vscode-jest",
+      "GraphQL.vscode-graphql",
+      "redhat.vscode-yaml",
+      "ms-vscode.vscode-typescript-next",
+      "formulahendry.auto-rename-tag",
+      "aaron-bond.better-comments",
+      "DavidAnson.vscode-markdownlint"
+    ]
+  }
+}

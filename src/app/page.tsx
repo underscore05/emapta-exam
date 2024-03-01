@@ -1,5 +1,7 @@
 "use client";
+import { AddIcon } from "@chakra-ui/icons";
 import {
+  Box,
   Button,
   ChakraProvider,
   Container,
@@ -46,7 +48,18 @@ export default function Home() {
     <ChakraProvider theme={theme}>
       <Container maxW={"6xl"} mt="8">
         <Stack gap={4}>
-          <Heading fontSize={"xl"}>Applicants</Heading>
+          <Flex w={"full"} justifyContent="space-between">
+            <Heading fontSize={"xl"}>Applicants</Heading>
+            {applicants.length > 0 && (
+              <Button
+                onClick={onOpen}
+                colorScheme="green"
+                leftIcon={<AddIcon fontSize="x-small" />}
+              >
+                Add Applicant
+              </Button>
+            )}
+          </Flex>
           {isOpen && (
             <ApplicantForm
               isOpen={isOpen}
@@ -55,7 +68,7 @@ export default function Home() {
                 dispatch({ type: "ADD_ALL", applicants: newApplicants });
                 onClose();
                 toast({
-                  title: `${newApplicants.length} applicant(s) has been added.`,
+                  title: `${newApplicants.length} applicant${newApplicants.length > 1 ? "s" : ""} added.`,
                   status: "success",
                   duration: 5000,
                   isClosable: true
@@ -64,11 +77,6 @@ export default function Home() {
               shouldHaveAPrimary={applicants.length == 0}
             />
           )}
-          <Flex w={"full"} justifyContent="end">
-            <Button onClick={onOpen} colorScheme="green">
-              Add Applicant
-            </Button>
-          </Flex>
           <ApplicantsTable
             applicants={applicants}
             onRemove={(id) => {
@@ -90,6 +98,22 @@ export default function Home() {
               })
             }
           />
+          {applicants.length === 0 && (
+            <Box p={8}>
+              <Heading fontSize={"3xl"} textAlign={"center"}>
+                No Appplicants Available
+              </Heading>
+              <Flex mt={8} w={"full"} justifyContent="center">
+                <Button
+                  leftIcon={<AddIcon fontSize="x-small" />}
+                  onClick={onOpen}
+                  colorScheme="green"
+                >
+                  Add Applicant
+                </Button>
+              </Flex>
+            </Box>
+          )}
         </Stack>
       </Container>
     </ChakraProvider>

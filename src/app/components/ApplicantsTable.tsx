@@ -1,4 +1,4 @@
-import { CheckIcon } from "@chakra-ui/icons";
+import { CheckIcon, DeleteIcon } from "@chakra-ui/icons";
 import {
   AlertDialog,
   AlertDialogBody,
@@ -81,6 +81,7 @@ export default function ApplicantsTable({
                   <Td>
                     <HStack>
                       <Button
+                        leftIcon={<DeleteIcon fontSize="x-small" />}
                         onClick={() => {
                           onDeleteOpen();
                           setForDeletion(applicant.id);

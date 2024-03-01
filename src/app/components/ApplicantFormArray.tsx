@@ -1,3 +1,4 @@
+import { AddIcon } from "@chakra-ui/icons";
 import {
   Button,
   HStack,
@@ -97,10 +98,11 @@ export function ApplicantFormArray({
         <Button
           type="button"
           variant="ghost"
+          leftIcon={<AddIcon fontSize="x-small" />}
           isDisabled={fields.length >= MAX_ADDITION}
           onClick={() => append(blankForm(), { shouldFocus: false })}
         >
-          Add More +
+          Add More
         </Button>
       </HStack>
     </VStack>
